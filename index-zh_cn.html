@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>今天去哪吃？</title>
+    <script type="text/javascript">
+        var resterauntList = ["甲食堂", "乙食堂", "丙食堂"];//食堂名字数组, 改成你自己学校食堂的名字
+        var index = Math.floor(Math.random() * (resterauntList.length));
+        window.onload = function () {
+            document.getElementById("RandomText").innerText = resterauntList[index];
+        };
+    </script>
+    <style>
+        body{
+            background: #4f71a1;
+        }
+        .container {
+            position: absolute;
+            margin:0 auto;
+            top:48%;
+            left:50%;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+            transform:translate(-50%,-50%);
+        }
+
+        div.box {
+            background-color: #b0c0d8a8;
+            box-shadow: 3px 5px 8px 1px #2f5180;
+            border: 10px solid #728eb6;
+            margin: 20px;
+            min-width: 60vw;
+        }
+
+        div.topborder {
+            border-top-width: 30px;
+            border-top-color: #728eb6;
+            border-top-style: dashed;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            color: #405a7e;
+            text-align: center;
+            margin: 10px 10px;
+        }
+        p{
+            color: #304a6e;
+            text-align: left;
+            font-size: 20px;
+        }
+        .footer{
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            width: 60vw;
+        }
+        img{
+            max-height: 100px;
+            margin:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <div class="box">
+        <div class="text" style="font-size: 60px;">
+            食堂随机器
+        </div>
+    </div>
+    <div class="box" style="width: 80vw;">
+        <div class="topborder">
+            <div style="margin: 40px;">
+                <div class="text" style="font-size: 50px;">
+                    你摇到了:
+                </div>
+                <div class="text" id="RandomText" style="font-size: 150px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box footer">
+        <img src="QR.webp" title="QRCode"/>
+        <div style="margin-left: 20px;">
+            <p> 保存左方二维码，随时随地摇食堂</p>
+            <p> Made By Nattiden 2022 </p>
+        </div>
+    </div>
+</body>
+</html>
